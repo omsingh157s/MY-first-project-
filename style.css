@@ -1,0 +1,105 @@
+body {
+    font-family: Arial;
+    background: linear-gradient(-45deg, #4facfe, #00f2fe, #43e97b, #38f9d7);
+    background-size: 400% 400%;
+    animation: gradientBG 8s ease infinite  ;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%;  }
+    100% { background-position: 0% 50%; }
+}
+
+.chat-container              {
+    width: 360px;
+    margin: 40px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    animation: fadeIn 1s ease;
+    
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    text-align: center;
+}
+
+#chatbox {
+    height: 300px;
+    overflow-y: auto;
+    border-radius: 10px;
+    padding: 10px;
+    background: #f7f7f7;
+    margin-bottom: 10px;
+}
+
+.user {
+    text-align: right;
+    color: blue;
+    margin: 5px;
+    animation: slideRight 0.3s ease;
+}
+
+.bot {
+    text-align: left;
+    color: green;
+    margin: 5px;
+    animation: slideLeft 0.3s ease;
+}
+
+@keyframes slideRight {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+input {
+    width: 65%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid gray;
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    background: #4facfe;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: #00c6ff;
+}

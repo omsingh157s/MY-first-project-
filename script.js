@@ -40,7 +40,7 @@ function sendMessage() {
         reply = "Hamare college me BCA, BBA aur BA courses available hain.";
     }
          else if (input.includes("attendance")) {
-      reply = ""75 % attendance compulsory hoti hai exam dene ke liye.";
+      reply = "75 % attendance compulsory hoti hai exam dene ke liye.";
     }
     else {
         reply = "Main abhi learning phase me hu. Simple questions puchiye 😊";
@@ -83,4 +83,5 @@ document.getElementById("userInput").addEventListener("keypress", function(e) {
         sendMessage();
     }
 });
+
 

@@ -22,10 +22,10 @@ function sendMessage() {
         reply = "College timing 8 AM se 1 PM hai.";
     }
     else if (input.includes("what is my name")) {
-        reply = "Mujhe aapka naam nahi pata 😊";
+        reply = "app ka name Om Singh hai 😊";
     }
     else if (input.includes("fees")) {
-        reply = "Fees details college office se mil jayegi.";
+        reply = "Fees details Per year ke 40 to 45 hai aap ke collage university of Maharaja collage ke .";
     }
     else if (input.includes("syllabus")) {
         reply = "Syllabus college website par available hai.";
@@ -38,6 +38,9 @@ function sendMessage() {
     }
     else if (input.includes("course")) {
         reply = "Hamare college me BCA, BBA aur BA courses available hain.";
+    }
+         else if (input.includes("attendance")) {
+      reply = ""75 % attendance compulsory hoti hai exam dene ke liye.";
     }
     else {
         reply = "Main abhi learning phase me hu. Simple questions puchiye 😊";
@@ -80,3 +83,4 @@ document.getElementById("userInput").addEventListener("keypress", function(e) {
         sendMessage();
     }
 });
+

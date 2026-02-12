@@ -119,4 +119,8 @@ document.getElementById("userInput").addEventListener("keypress", function(e) {
         sendMessage();
     }
 });
+function toggleDark() {
+    document.body.classList.toggle("dark-mode");
+}
+
 

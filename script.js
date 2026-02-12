@@ -1,46 +1,52 @@
 function sendMessage() {
-    let input = document.getElementById("userInput").value;
+    let inputBox = document.getElementById("userInput");
     let chatbox = document.getElementById("chatbox");
+    let input = inputBox.value.trim();
 
-    if (input.trim() === "") return;
+    if (input === "") return;
 
+    // Show user message
     chatbox.innerHTML += "<div class='user'>You: " + input + "</div>";
 
     let reply = "";
-    input = input.toLowerCase();
+    let text = input.toLowerCase();
 
-    if (input.includes("hello")) {
+    // Q/A Logic
+    if (text.includes("hello") || text.includes("hi")) {
         reply = "Hello! Kaise help karu? 😊";
     }
-    else if (input.includes("bca")) {
+    else if (text.includes("bca")) {
         reply = "BCA ek 3 saal ka computer course hai.";
     }
-    else if (input.includes("exam")) {
+    else if (text.includes("exam")) {
         reply = "Exam date notice board par check karein.";
     }
-    else if (input.includes("timing")) {
+    else if (text.includes("timing")) {
         reply = "College timing 8 AM se 1 PM hai.";
     }
-    else if (input.includes("what is my name")) {
-        reply = "app ka name Om Singh hai 😊";
+    else if (text.includes("what is my name")) {
+        reply = "Aap ka name Om Singh hai 😊";
     }
-    else if (input.includes("fees")) {
-        reply = "Fees details Per year ke 40 to 45 hai aap ke collage university of Maharaja collage ke .";
+    else if (text.includes("fees")) {
+        reply = "Fees per year approx 40–45k hoti hai Maharaja College me.";
     }
-    else if (input.includes("syllabus")) {
+    else if (text.includes("syllabus")) {
         reply = "Syllabus college website par available hai.";
     }
-    else if (input.includes("holiday")) {
+    else if (text.includes("holiday")) {
         reply = "Holiday list notice board par check karein.";
     }
-    else if (input.includes("principal")) {
+    else if (text.includes("principal")) {
         reply = "Principal ka naam college website par mil jayega.";
     }
-    else if (input.includes("course")) {
+    else if (text.includes("course")) {
         reply = "Hamare college me BCA, BBA aur BA courses available hain.";
     }
-         else if (input.includes("attendance")) {
-      reply = "75 % attendance compulsory hoti hai exam dene ke liye.";
+    else if (text.includes("attendance")) {
+        reply = "75% attendance compulsory hoti hai exam dene ke liye.";
+    }
+    else if (text.includes("scholarship")) {
+        reply = "Government scholarship eligible students ko milti hai.";
     }
     else {
         reply = "Main abhi learning phase me hu. Simple questions puchiye 😊";
@@ -48,16 +54,22 @@ function sendMessage() {
 
     // Typing animation
     chatbox.innerHTML += "<div class='bot' id='typing'>Bot is typing...</div>";
+    chatbox.scrollTop = chatbox.scrollHeight;
 
     setTimeout(() => {
-        document.getElementById("typing").remove();
+        let typing = document.getElementById("typing");
+        if (typing) typing.remove();
+
         chatbox.innerHTML += "<div class='bot'>Bot: " + reply + "</div>";
         chatbox.scrollTop = chatbox.scrollHeight;
     }, 800);
 
-    document.getElementById("userInput").value = "";
+    inputBox.value = "";
 }
 
+//
+// 🎤 Voice Input
+//
 function startVoice() {
 
     if (!('webkitSpeechRecognition' in window)) {
@@ -77,11 +89,33 @@ function startVoice() {
     recognition.start();
 }
 
-// Enter key se message send
+//
+// ⚡ Quick Button Ask
+//
+function ask(text) {
+    document.getElementById("userInput").value = text;
+    sendMessage();
+}
+
+//
+// 🌙 Dark Mode
+//
+function toggleDark() {
+    document.body.classList.toggle("dark");
+}
+
+//
+// 🗑 Clear Chat
+//
+function clearChat() {
+    document.getElementById("chatbox").innerHTML = "";
+}
+
+//
+// ⌨️ Enter Key Send
+//
 document.getElementById("userInput").addEventListener("keypress", function(e) {
     if (e.key === "Enter") {
         sendMessage();
     }
 });
-
-

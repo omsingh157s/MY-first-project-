@@ -31,16 +31,16 @@ function sendMessage() {
         reply = "Fees per year approx 40–45k hoti hai Maharaja College me.";
     }
     else if (text.includes("syllabus")) {
-        reply = "Syllabus college website par available hai.";
+        reply = "Syllabus college website par available hai univraj.org.";
     }
     else if (text.includes("holiday")) {
         reply = "Holiday list notice board par check karein.";
     }
     else if (text.includes("principal")) {
-        reply = "Principal ka naam college website par mil jayega.";
+        reply = "University Of Maharaja college Ke Principal ka naam Prof. Gajendra Pal Singh (GP Singh) hai  .";
     }
     else if (text.includes("course")) {
-        reply = "Hamare college me BCA, BBA aur BA courses available hain.";
+        reply = "Hamare college me BCA, BSC aur BSC honours courses available hain.";
     }
     else if (text.includes("attendance")) {
         reply = "75% attendance compulsory hoti hai exam dene ke liye.";
@@ -119,3 +119,4 @@ document.getElementById("userInput").addEventListener("keypress", function(e) {
         sendMessage();
     }
 });
+

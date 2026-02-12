@@ -1,27 +1,80 @@
 body {
     font-family: Arial;
-    background: linear-gradient(-45deg, #4facfe, #00f2fe, #43e97b, #38f9d7);
+    background: linear-gradient(-45deg, #4facfe, #00f2fe, #43e97b, #fa709a);
     background-size: 400% 400%;
-    animation: gradientBG 8s ease infinite  ;
+    animation: gradientBG 10s ease infinite;
 }
 
+/* Moving background animation */
 @keyframes gradientBG {
     0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%;  }
+    50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-.chat-container              {
+/* Glass effect container */
+.chat-container {
     width: 360px;
     margin: 40px auto;
-    background: white;
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(0,0,0,0.2);
     animation: fadeIn 1s ease;
-    
 }
 
+h2 {
+    text-align: center;
+}
+
+/* Chat box */
+#chatbox {
+    height: 300px;
+    overflow-y: auto;
+    border-radius: 10px;
+    padding: 10px;
+    background: #f7f7f7;
+    margin-bottom: 10px;
+}
+
+/* Message bubbles */
+.user, .bot {
+    padding: 8px 12px;
+    border-radius: 12px;
+    margin: 6px 0;
+    max-width: 75%;
+}
+
+/* User message */
+.user {
+    background: #4facfe;
+    color: white;
+    margin-left: auto;
+    text-align: right;
+    animation: slideRight 0.3s ease;
+}
+
+/* Bot message */
+.bot {
+    background: #e6e6e6;
+    color: black;
+    text-align: left;
+    animation: slideLeft 0.3s ease;
+}
+
+/* Slide animations */
+@keyframes slideRight {
+    from { transform: translateX(60px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideLeft {
+    from { transform: translateX(-60px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Page load animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -33,55 +86,7 @@ body {
     }
 }
 
-h2 {
-    text-align: center;
-}
-
-#chatbox {
-    height: 300px;
-    overflow-y: auto;
-    border-radius: 10px;
-    padding: 10px;
-    background: #f7f7f7;
-    margin-bottom: 10px;
-}
-
-.user {
-    text-align: right;
-    color: blue;
-    margin: 5px;
-    animation: slideRight 0.3s ease;
-}
-
-.bot {
-    text-align: left;
-    color: green;
-    margin: 5px;
-    animation: slideLeft 0.3s ease;
-}
-
-@keyframes slideRight {
-    from {
-        transform: translateX(50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideLeft {
-    from {
-        transform: translateX(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
+/* Input box */
 input {
     width: 65%;
     padding: 8px;
@@ -89,6 +94,13 @@ input {
     border: 1px solid gray;
 }
 
+/* Input focus glow */
+input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #4facfe;
+}
+
+/* Button style */
 button {
     padding: 8px 12px;
     border: none;
@@ -99,7 +111,22 @@ button {
     transition: 0.3s;
 }
 
+/* Button hover glow */
 button:hover {
     transform: scale(1.1);
-    background: #00c6ff;
+    box-shadow: 0 0 15px #4facfe;
+}
+
+/* Typing dots animation */
+.dot {
+    animation: blink 1s infinite;
+}
+
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
 }

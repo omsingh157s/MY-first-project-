@@ -7,13 +7,32 @@
 <body>
 
 <div class="chat-container">
+
     <h2>College Help AI Chatbot 🤖</h2>
 
+    <!-- Chat Messages -->
     <div id="chatbox"></div>
 
+    <!-- Quick Questions -->
+    <div class="quick">
+        <button onclick="ask('fees')">Fees</button>
+        <button onclick="ask('exam')">Exam</button>
+        <button onclick="ask('timing')">Timing</button>
+        <button onclick="ask('scholarship')">Scholarship</button>
+    </div>
+
+    <!-- Input Section -->
     <input type="text" id="userInput" placeholder="Ask something...">
+
     <button onclick="sendMessage()">Enter</button>
     <button onclick="startVoice()">🎤 Speak</button>
+
+    <!-- Extra Controls -->
+    <div class="extra">
+        <button onclick="toggleDark()">🌙 Dark</button>
+        <button onclick="clearChat()">🗑 Clear</button>
+    </div>
+
 </div>
 
 <script src="script.js"></script>
